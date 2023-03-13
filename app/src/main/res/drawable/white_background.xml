@@ -9,12 +9,8 @@
             <solid
                 android:color="@color/white"/>
 
-            <corners
-                android:radius="20dp"/>
+            <corners android:topRightRadius="30dp" android:topLeftRadius="30dp"/>
 
-            <stroke
-                android:width="2dp"
-                android:color="@color/lavender"/>
 
         </shape>
 
