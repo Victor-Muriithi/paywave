@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Signup Login Realtime</string>
+
+    <string name="prompt">Category</string>
+    <string-array name="items">
+        <item>Utilities</item>
+        <item>Cloths</item>
+        <item>Rent</item>
+        <item>Food</item>
+        <item>Others</item>
+    </string-array>
+
+    <string name="name">Entity</string>
+    <string name="cat">CATEGORIES</string>
+    <string name="select">Select an item</string>
+    <string name="phone">eg 079900234</string>
+    <string name="account">Business Account</string>
+    <string name="paybill">Business PayBill</string>
+    <string name="currency">Ksh</string>
+    <string name="add">Add</string>
+
 </resources>
