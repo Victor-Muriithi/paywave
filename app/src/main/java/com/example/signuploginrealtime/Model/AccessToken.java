@@ -1,4 +1,4 @@
-package com.example.signuploginrealtime.Daraja;
+package com.example.signuploginrealtime.Model;
 import com.google.gson.annotations.*;
 
 
