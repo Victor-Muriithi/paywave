@@ -1,4 +1,4 @@
-package com.example.signuploginrealtime;
+package com.example.paywave;
 
 import android.util.Base64;
 

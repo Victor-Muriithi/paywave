@@ -1,4 +1,4 @@
-package com.example.signuploginrealtime;
+package com.example.paywave;
 public class Constants {
     public static final int CONNECT_TIMEOUT = 60 * 1000;
 

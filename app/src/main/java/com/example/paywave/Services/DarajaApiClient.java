@@ -1,12 +1,12 @@
-package com.example.signuploginrealtime.Services;
+package com.example.paywave.Services;
 
-import static com.example.signuploginrealtime.Constants.BASE_URL;
-import static com.example.signuploginrealtime.Constants.CONNECT_TIMEOUT;
-import static com.example.signuploginrealtime.Constants.READ_TIMEOUT;
-import static com.example.signuploginrealtime.Constants.WRITE_TIMEOUT;
+import static com.example.paywave.Constants.BASE_URL;
+import static com.example.paywave.Constants.CONNECT_TIMEOUT;
+import static com.example.paywave.Constants.READ_TIMEOUT;
+import static com.example.paywave.Constants.WRITE_TIMEOUT;
 
-import com.example.signuploginrealtime.Interceptor.AccessTokenInterceptor;
-import com.example.signuploginrealtime.Interceptor.AuthInterceptor;
+import com.example.paywave.Interceptor.AccessTokenInterceptor;
+import com.example.paywave.Interceptor.AuthInterceptor;
 
 import java.util.concurrent.TimeUnit;
 

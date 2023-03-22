@@ -1,10 +1,10 @@
-package com.example.signuploginrealtime.Interceptor;
+package com.example.paywave.Interceptor;
 
 import android.util.Base64;
 
 import androidx.annotation.NonNull;
 
-import com.example.signuploginrealtime.BuildConfig;
+import com.example.paywave.BuildConfig;
 
 import java.io.IOException;
 

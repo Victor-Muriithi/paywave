@@ -1,4 +1,4 @@
-package com.example.signuploginrealtime.Model;
+package com.example.paywave.Model;
 
 import com.google.gson.annotations.SerializedName;
 

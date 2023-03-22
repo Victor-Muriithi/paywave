@@ -1,7 +1,7 @@
-package com.example.signuploginrealtime.Services;
+package com.example.paywave.Services;
 
-import com.example.signuploginrealtime.Model.AccessToken;
-import com.example.signuploginrealtime.Model.STKPush;
+import com.example.paywave.Model.AccessToken;
+import com.example.paywave.Model.STKPush;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

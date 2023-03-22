@@ -1,4 +1,4 @@
-package com.example.signuploginrealtime;
+package com.example.paywave;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.signuploginrealtime.Model.AccessToken;
-import com.example.signuploginrealtime.Model.STKPush;
-import com.example.signuploginrealtime.Services.DarajaApiClient;
+import com.example.paywave.Model.AccessToken;
+import com.example.paywave.Model.STKPush;
+import com.example.paywave.Services.DarajaApiClient;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,11 +20,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import timber.log.Timber;
 
-import static com.example.signuploginrealtime.Constants.BUSINESS_SHORT_CODE;
-import static com.example.signuploginrealtime.Constants.CALLBACKURL;
-import static com.example.signuploginrealtime.Constants.PARTYB;
-import static com.example.signuploginrealtime.Constants.PASSKEY;
-import static com.example.signuploginrealtime.Constants.TRANSACTION_TYPE;
+import static com.example.paywave.Constants.BUSINESS_SHORT_CODE;
+import static com.example.paywave.Constants.CALLBACKURL;
+import static com.example.paywave.Constants.PARTYB;
+import static com.example.paywave.Constants.PASSKEY;
+import static com.example.paywave.Constants.TRANSACTION_TYPE;
 
 public class Daraja extends AppCompatActivity implements View.OnClickListener {
 

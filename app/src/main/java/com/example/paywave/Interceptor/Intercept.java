@@ -1,4 +1,4 @@
-package com.example.signuploginrealtime.Interceptor;
+package com.example.paywave.Interceptor;
 
 import androidx.annotation.NonNull;
 

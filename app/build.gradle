@@ -1,14 +1,14 @@
 plugins {
     id 'com.android.application'
-    id 'com.google.gms.google-services'
 }
 
 android {
-    namespace 'com.example.signuploginrealtime'
+    namespace 'com.example.paywave'
     compileSdk 33
 
+
     defaultConfig {
-        applicationId "com.example.signuploginrealtime"
+        applicationId "com.example.paywave"
         minSdk 26
         targetSdk 33
         versionCode 1
@@ -58,7 +58,7 @@ dependencies {
 annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
 implementation 'com.jakewharton.timber:timber:4.7.1'
 
-implementation 'com.github.jumadeveloper:networkmanager:0.0.2'
+//implementation 'com.github.jumadeveloper:networkmanager:0.0.2'
 
 implementation 'cn.pedant.sweetalert:library:1.3'
 
