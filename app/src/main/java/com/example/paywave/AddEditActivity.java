@@ -1,4 +1,4 @@
-package com.example.signuploginrealtime;
+package com.example.paywave;
 
 import static android.content.ContentValues.TAG;
 
