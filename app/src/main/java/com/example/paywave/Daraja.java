@@ -1,13 +1,22 @@
 package com.example.paywave;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import static com.example.paywave.Constants.BUSINESS_SHORT_CODE;
+import static com.example.paywave.Constants.CALLBACKURL;
+import static com.example.paywave.Constants.PARTYB;
+import static com.example.paywave.Constants.PASSKEY;
+import static com.example.paywave.Constants.TRANSACTION_TYPE;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.paywave.Model.AccessToken;
 import com.example.paywave.Model.STKPush;
@@ -20,20 +29,17 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import timber.log.Timber;
 
-import static com.example.paywave.Constants.BUSINESS_SHORT_CODE;
-import static com.example.paywave.Constants.CALLBACKURL;
-import static com.example.paywave.Constants.PARTYB;
-import static com.example.paywave.Constants.PASSKEY;
-import static com.example.paywave.Constants.TRANSACTION_TYPE;
-
 public class Daraja extends AppCompatActivity implements View.OnClickListener {
 
     private DarajaApiClient mApiClient;
     private ProgressDialog mProgressDialog;
 
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.etAmount)
     EditText mAmount;
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.etPhone)EditText mPhone;
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btnPay)
     Button mPay;
 
@@ -50,6 +56,18 @@ public class Daraja extends AppCompatActivity implements View.OnClickListener {
         mPay.setOnClickListener(this);
 
         getAccessToken();
+
+
+        ImageView back_btn = findViewById(R.id.back_btn);
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Daraja.this, MainActivity.class);
+                startActivity(i);
+
+            }
+        });
 
     }
 
