@@ -16,11 +16,11 @@
         android:theme="@style/Theme.SignupLoginRealtime"
         tools:replace="android:icon"
         tools:targetApi="31">
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Daraja"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
