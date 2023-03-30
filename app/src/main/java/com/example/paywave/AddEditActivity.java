@@ -5,6 +5,7 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -59,22 +61,19 @@ public class AddEditActivity extends AppCompatActivity {
             }
         });
 
-        String entityName = entityNameField.getText().toString();
-        String selectedType = spinner.getSelectedItem().toString();
-        String phoneString = phoneEditText.getText().toString();
-        int phone = 0; // default value in case phoneEditText is empty
-        if (!TextUtils.isEmpty(phoneString)) {
-            phone = Integer.parseInt(phoneString);
-        }
-        String account = accountEditText.getText().toString();
-        String payBill = payBillEditText.getText().toString();
 
-        int finalPhone = phone;
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Details details = new Details("",entityName, selectedType, phoneString,
+                String entityName = entityNameField.getText().toString();
+                String selectedType = spinner.getSelectedItem().toString();
+                String phoneString = phoneEditText.getText().toString();
+                String account = accountEditText.getText().toString();
+                String payBill = payBillEditText.getText().toString();
+
+                Detail details = new Detail("",entityName, selectedType, phoneString,
                         account, payBill);
 
                 // Create a new document with a randomly generated ID
@@ -89,6 +88,9 @@ public class AddEditActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                                Toast.makeText(AddEditActivity.this, "Added Successfully", Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(AddEditActivity.this, MainActivity.class);
+                                startActivity(i);
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
