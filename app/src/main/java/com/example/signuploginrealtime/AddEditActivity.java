@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -15,6 +16,9 @@ import android.widget.Spinner;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,39 +43,61 @@ public class AddEditActivity extends AppCompatActivity {
         TextInputEditText payBillEditText = findViewById(R.id.paybill);
 
         Button saveButton = findViewById(R.id.save_action);
+        Button cancelButton = findViewById(R.id.cancel_button);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+        // Set up OnClickListener for cancel button
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Set text of each TextInputEditText to be blank
+                entityNameField.setText("");
+                phoneEditText.setText("");
+                accountEditText.setText("");
+                payBillEditText.setText("");
+            }
+        });
+
+        String entityName = entityNameField.getText().toString();
+        String selectedType = spinner.getSelectedItem().toString();
+        String phoneString = phoneEditText.getText().toString();
+        int phone = 0; // default value in case phoneEditText is empty
+        if (!TextUtils.isEmpty(phoneString)) {
+            phone = Integer.parseInt(phoneString);
+        }
+        String account = accountEditText.getText().toString();
+        String payBill = payBillEditText.getText().toString();
+
+        int finalPhone = phone;
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String entityName = entityNameField.getText().toString();
-                String selectedType = spinner.getSelectedItem().toString();
-                String phoneString = phoneEditText.getText().toString();
-                int phone = Integer.parseInt(phoneString);
-                String account = accountEditText.getText().toString();
-                String payBill = payBillEditText.getText().toString();
 
-                Map<String, Object> details = new HashMap<>();
-                details.put("name", entityName);
-                details.put("category", selectedType);
-                details.put("phone", phone);
-                details.put("account", account);
+                Details details = new Details("",entityName, selectedType, phoneString,
+                        account, payBill);
 
-                db.collection("user").document("details")
-                        .set(details)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                // Create a new document with a randomly generated ID
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String uid = user.getUid();
+
+                db.collection("user")
+                        .document(uid)
+                        .collection("details")
+                        .add(details)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
-                            public void onSuccess(Void aVoid) {
-                                Log.d(TAG, "DocumentSnapshot successfully written!");
+                            public void onSuccess(DocumentReference documentReference) {
+                                Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG, "Error writing document", e);
+                                Log.w(TAG, "Error adding document", e);
                             }
                         });
+
             }
         });
 

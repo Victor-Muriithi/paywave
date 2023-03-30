@@ -4,7 +4,7 @@
     <string name="prompt">Category</string>
     <string-array name="items">
         <item>Utilities</item>
-        <item>Cloths</item>
+        <item>Clothes</item>
         <item>Rent</item>
         <item>Food</item>
         <item>Others</item>
@@ -18,5 +18,8 @@
     <string name="paybill">Business PayBill</string>
     <string name="currency">Ksh</string>
     <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="back_button">Back Arrow</string>
+    <string name="edit_or_add">Add or Edit</string>
 
 </resources>
