@@ -53,12 +53,27 @@ public class SignupActivity extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(emailTextView.getText().length() == 0 || editTextTextPassword.getText().length() == 0 ||  confirmPasswordTextView.getText().length() == 0 ){
+                    Toast.makeText(SignupActivity.this, "Enter the required fields",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(!editTextTextPassword.getText().toString().equals(confirmPasswordTextView.getText().toString())){
+                    Toast.makeText(SignupActivity.this, "Password mismatch",
+                            Toast.LENGTH_SHORT).show();
+                    System.out.println(editTextTextPassword.getText().toString());
+                    System.out.println(confirmPasswordTextView.getText().toString());
+                    return;
+                }
+
                 createAccount(emailTextView.getText().toString(), editTextTextPassword.getText().toString());
             }
         });
 
     }
-
+ // iamtestUser_2
     //Create account method
     private void createAccount(String email, String password) {
         // [START create_user_with_email]
@@ -69,8 +84,17 @@ public class SignupActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
+                            // Sign in success, update UI with the signed-in user's information
+                            // Sign in success, update UI with the signed-in user's information
+                            Toast.makeText(SignupActivity.this, "createUserWithEmail:success",
+                                    Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+//                            updateUI(user);
+
+                            Intent i = new Intent(SignupActivity.this, MainActivity.class);
+                            startActivity(i);
+
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
