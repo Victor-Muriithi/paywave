@@ -8,17 +8,19 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5sp"
             android:text="HomePage"
-            android:textSize="25sp"
             android:textColor="@color/black"
-            android:padding="5sp"/>
+            android:textSize="25sp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -29,43 +31,36 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:visibility="visible">
+
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/category"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contextClickable="true"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp"
-                    app:cardUseCompatPadding="true"
-                    android:id="@+id/category">
-                </androidx.cardview.widget.CardView>
+                    app:cardUseCompatPadding="true"></androidx.cardview.widget.CardView>
+
                 <Button
-                    android:layout_width="wrap_content"
+                    android:id="@+id/button_category"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Button"
-                    android:id="@+id/button_category"/>
+                    android:text="Button" />
 
             </LinearLayout>
         </ScrollView>
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-
-        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="1dp"
             android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/nav_host_fragment_content_main"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="498dp"
+            android:textAlignment="center">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -73,8 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="16dp"
         android:contentDescription="ADD"
         android:src="@drawable/baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"

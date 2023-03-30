@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 
 import com.example.paywave.Services.Adapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,17 +40,15 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
-//        // Create the dummy data
-//        List<Details> dataList = new ArrayList<>();
-//        dataList.add(new Details("John Smith", "1234567890"));
-//        dataList.add(new Details("Jane Doe", "0987654321"));
-//        dataList.add(new Details("Bob Johnson", "5555555555"));
 
-// Create the adapter and set it for the RecyclerView
-//        ListAdapter adapter = new ListAdapter(dataList);
-//        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-//        recyclerView.setAdapter(adapter);
-
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
     }
 }

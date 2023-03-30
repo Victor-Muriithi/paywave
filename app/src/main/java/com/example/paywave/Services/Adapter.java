@@ -39,19 +39,19 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.transactionTo.setText(arrayList.get(position).transactionDetail1);
         holder.transactionFrom.setText(arrayList.get(position).transactionDetail2);
 
-        holder.CardExpandableTitle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(arrayList.get(position).isVisible){
-                    holder.ExpandableCardItem.setVisibility(View.GONE);
-                    arrayList.get(position).isVisible = false;
-                }
-                else {
-                    holder.ExpandableCardItem.setVisibility(View.VISIBLE);
-                    arrayList.get(position).isVisible = true;
-                }
-            }
-        });
+//        holder.CardExpandableTitle.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if(arrayList.get(position).isVisible){
+//                    holder.ExpandableCardItem.setVisibility(View.GONE);
+//                    arrayList.get(position).isVisible = false;
+//                }
+//                else {
+//                    holder.ExpandableCardItem.setVisibility(View.VISIBLE);
+//                    arrayList.get(position).isVisible = true;
+//                }
+//            }
+//        });
     }
 
     @Override
