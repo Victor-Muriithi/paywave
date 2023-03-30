@@ -33,19 +33,113 @@
                 android:visibility="visible">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/category"
+                    android:id="@+id/category1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contextClickable="true"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp"
-                    app:cardUseCompatPadding="true"></androidx.cardview.widget.CardView>
+                    app:cardUseCompatPadding="true">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="All"
+                        android:id="@+id/categoryAll"/>
 
-                <Button
-                    android:id="@+id/button_category"
-                    android:layout_width="match_parent"
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/category2"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Button" />
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:contextClickable="true"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/utility"
+                        android:id="@+id/categoryUtility"/>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/category3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contextClickable="true"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Rent"
+                        android:id="@+id/categoryRent"/>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/category4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:contextClickable="true"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Clothes"
+                        android:id="@+id/categoryClothes"/>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/category5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:contextClickable="true"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Food"
+                        android:id="@+id/categoryFood"/>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/category6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:contextClickable="true"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Others"
+                        android:id="@+id/categoryOther"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <!--                <Button-->
+<!--                    android:id="@+id/button_category"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Button" />-->
 
             </LinearLayout>
         </ScrollView>
@@ -54,8 +148,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
+            android:layout_height="571dp"
             android:layout_gravity="center"
-            android:layout_height="498dp"
             android:textAlignment="center">
 
         </androidx.recyclerview.widget.RecyclerView>
