@@ -31,8 +31,9 @@
         <activity
             android:name=".Daraja"
             android:exported="false" />
+
         <activity
-            android:name=".LoginActivity"
+            android:name=".Daraja"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
