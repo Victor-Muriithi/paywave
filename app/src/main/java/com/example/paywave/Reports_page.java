@@ -74,7 +74,7 @@ public class Reports_page extends AppCompatActivity {
 
         piechart.setData(new PieData(pie_data_set));
 
-        piechart.animateXY(2500, 2500);
+        piechart.animateXY(1500, 1500);
 
         piechart.getDescription().setEnabled(false);
 
