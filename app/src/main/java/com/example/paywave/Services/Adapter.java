@@ -35,6 +35,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
         holder.CardTitle.setText(arrayList.get(position).entity);
+        System.out.println(arrayList.get(position).entity);
         holder.transactionTo.setText(arrayList.get(position).transactionDetail1);
         holder.transactionFrom.setText(arrayList.get(position).transactionDetail2);
 
@@ -55,7 +56,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return arrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

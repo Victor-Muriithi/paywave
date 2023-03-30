@@ -3,8 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
     android:orientation="vertical">
 
 
@@ -43,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/cardExpandedItems"
                     android:orientation="vertical"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -63,19 +61,28 @@
 
                         <Button
                             android:id="@+id/delete_button"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="32dp"
                             android:layout_margin="10dp"
                             android:text="DELETE"
                             android:textSize="10sp"/>
                         <Button
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="32dp"
                             android:layout_margin="10dp"
                             android:id="@+id/Edit"
                             android:textSize="10sp"
                             android:text="Edit"/>
 
+                        <Button
+                            android:id="@+id/payBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_height="32dp"
+                            android:text="Pay"
+                            android:background="@drawable/pay_button_background"
+                            android:textSize="10sp"
+                            android:textColor="@color/black"/>
 
                     </LinearLayout>
                 </LinearLayout>
