@@ -1,10 +1,40 @@
 {
   "project_info": {
     "project_number": "847377394363",
+    "firebase_url": "https://paywave-825fe-default-rtdb.firebaseio.com",
     "project_id": "paywave-825fe",
     "storage_bucket": "paywave-825fe.appspot.com"
   },
   "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847377394363:android:6a9f37d25e3514ef70179e",
+        "android_client_info": {
+          "package_name": "com.example.paywave"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847377394363-a1s6nkm4ubfs8s79aes6rtelsd4k1tjj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm-n3GgyDmnKVX4dP5AZOHck7kyxogbiQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847377394363-a1s6nkm4ubfs8s79aes6rtelsd4k1tjj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:847377394363:android:ba49c58aa2d4d4fb70179e",
