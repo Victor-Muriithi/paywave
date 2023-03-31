@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,10 +39,13 @@ public class Daraja extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.etAmount)
     EditText mAmount;
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.etPhone)EditText mPhone;
+    @BindView(R.id.etPhone)
+    TextView mPhone;
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.btnPay)
     Button mPay;
+    public String phoneNumber;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,8 @@ public class Daraja extends AppCompatActivity implements View.OnClickListener {
         mPay.setOnClickListener(this);
 
         getAccessToken();
+
+
 
 
         ImageView back_btn = findViewById(R.id.back_btn);
