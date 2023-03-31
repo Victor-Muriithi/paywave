@@ -4,7 +4,7 @@
     <string name="prompt">Category</string>
     <string-array name="items">
         <item>Utilities</item>
-        <item>Cloths</item>
+        <item>Clothes</item>
         <item>Rent</item>
         <item>Food</item>
         <item>Others</item>

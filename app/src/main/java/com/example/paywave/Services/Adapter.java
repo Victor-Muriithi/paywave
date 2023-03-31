@@ -1,16 +1,20 @@
 package com.example.paywave.Services;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.paywave.Daraja;
 import com.example.paywave.Details;
+import com.example.paywave.MainActivity;
 import com.example.paywave.R;
 
 import java.util.ArrayList;
@@ -30,6 +34,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.card_view, null, false);
         return new ViewHolder(view);
+
+
     }
 
     @Override
@@ -38,7 +44,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         System.out.println(arrayList.get(position).entity);
         holder.transactionTo.setText(arrayList.get(position).transactionDetail1);
         holder.transactionFrom.setText(arrayList.get(position).transactionDetail2);
+        holder.paybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, Daraja.class);
+                context.startActivity(i);
 
+            }
+        });
 //        holder.CardExpandableTitle.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -64,6 +77,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         TextView CardTitle;
         TextView transactionTo;
         TextView transactionFrom;
+        Button paybtn;
         LinearLayout CardExpandableTitle;
         LinearLayout ExpandableCardItem;
 
@@ -75,6 +89,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             transactionFrom = itemView.findViewById(R.id.transaction_to_details);
             CardExpandableTitle = itemView.findViewById(R.id.cardTitleExpandable);
             ExpandableCardItem = itemView.findViewById(R.id.cardExpandedItems);
+            paybtn = itemView.findViewById(R.id.payBtn);
         }
     }
 }

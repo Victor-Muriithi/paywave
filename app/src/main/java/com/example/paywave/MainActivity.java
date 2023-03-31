@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView = findViewById(R.id.recyclerView);
         arrayList = new ArrayList<>();
-        System.out.println(uid+"vuyvy");
+//        adapter = new Adapter(arrayList, MainActivity.this);
+
         db.collection("user")
                 .document(uid)
                 .collection("details")
@@ -60,23 +61,23 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 arrayList.add(new Details(document.get("entity").toString(),document.get("payBill").toString() , document.get("accountNumber").toString(),false ));
-                                System.out.println("here " + document.get("entity").toString());
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-                                adapter = new Adapter(arrayList, MainActivity.this);
-
                             }
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
                         }
+                        adapter = new Adapter(arrayList, MainActivity.this);
+
+                        RecyclerView.setLayoutManager(new LinearLayoutManager( MainActivity.this));
+
+                        RecyclerView.setAdapter(adapter);
+
+                        adapter.notifyDataSetChanged();
+
                     }
                 });
 
 
-        System.out.println(arrayList);
-        adapter = new Adapter(arrayList, MainActivity.this);
-        RecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        RecyclerView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -92,5 +93,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        usersRef.get().addOnCompleteListener(task -> {
+//            if (task.isSuccessful()) {
+//                List<User> usersList = new ArrayList<>();
+//                for (QueryDocumentSnapshot document : task.getResult()) {
+//                    User user = document.toObject(User.class);
+//                    usersList.add(user);
+//                }
+//                UsersAdapter adapter = new UsersAdapter(usersList);
+//                recyclerView.setAdapter(adapter);
+//            } else {
+//                Log.d(TAG, "Error getting documents: ", task.getException());
+//            }
+//        });
     }
 }

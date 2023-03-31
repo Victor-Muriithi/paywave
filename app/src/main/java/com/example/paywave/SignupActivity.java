@@ -108,6 +108,8 @@ public class SignupActivity extends AppCompatActivity {
         // [END create_user_with_email]
     }
 
+//re@gmail.com
+//re_22!!
     private void updateUI(FirebaseUser user) {
     }
 }
