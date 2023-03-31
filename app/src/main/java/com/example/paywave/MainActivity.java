@@ -47,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
 
+        if(uid == null){
+            Intent i = new Intent(MainActivity.this, AddEditActivity.class);
+            startActivity(i);
+        }
+
         RecyclerView = findViewById(R.id.recyclerView);
         arrayList = new ArrayList<>();
 //        adapter = new Adapter(arrayList, MainActivity.this);
